@@ -1,0 +1,26 @@
+## Authentication and Authorization Breakdown:
+
+**1. Bcrypt**
+* Module: **Authentication**
+* Description: Bcrypt is a hashing algorithm used to securely store passwords. It doesn't directly perform authentication, but its secure hashing is crucial for verifying user credentials during login. 
+
+**2. Cookie and Session**
+* Module: **Authentication** (potentially **Authorization** for simple scenarios)
+* Description: Cookies and Sessions can be used to store user information after successful authentication. They can also be used for basic authorization by checking the presence of a valid session token. However, for more complex authorization needs, other methods are preferred.
+
+**3. JWT (JSON Web Token)**
+* Module: **Authorization**
+* Description: JWTs are tokens containing encoded user information that can be used for authorization. After authentication, a JWT is generated and sent to the user. With subsequent requests, the user sends this token to the server. The server verifies the JWT and grants access based on the information within.
+
+**4. OAuth using Passport.js**
+* Module: **Authentication**
+* Description: OAuth is an authorization framework allowing users to sign in using existing accounts from providers like Google or Facebook. Passport.js is a popular library for implementing OAuth in Node.js applications. It handles the communication with the provider and verifies the user's identity.
+
+**5. Authorization - RBAC (Role-Based Access Control)**
+* Module: **Authorization**
+* Description: RBAC is an authorization model that defines access permissions based on user roles.  It determines what actions users with specific roles can perform within the system.
+
+**In summary:**
+
+* Authentication verifies a user's identity (who they are).
+* Authorization determines what a user can access based on their identity (what they can do).
