@@ -59,22 +59,23 @@ app.post("/login", async (req, res) => {
 
   try {
     const query =
-      "SELECT email,password FROM users WHERE email = $1";
+      "SELECT email, password FROM users WHERE email = $1";
     const { rows } = await db.query(query, [email]);
-    if (rows.length < 1) {
-      return res.send("User dont exists, Please register");
-    }
 
-    if (rows[0].password === password) {
-      res.render("secrets.ejs");
+    if (rows.length < 1) {
+      res.send("User doesn't exist, Please register");
     } else {
-      res.send("Incorrecr username or password");
+      rows[0].password === password ? res.render("secrets.ejs") : res.send("Incorrect username or password");
     }
   } catch (error) {
-    console.log("Error authenticating", error.stack);
+    console.error("Error authenticating:", error);
     res.status(500).send("Internal Server Error");
   }
 });
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
