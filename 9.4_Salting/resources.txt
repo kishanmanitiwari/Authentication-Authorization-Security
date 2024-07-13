@@ -1,0 +1,8 @@
+Salt - Random Set of character
+(King) bcrypt(blowfish algo) Hashing Algotithm vs MD5
+Salt Rounds - The more round of salt the more secure
+hash+salt = cipher 
+cipher+salt = new cipher //Rounds 2
+
+//bcrypt - package
+//hash and compare

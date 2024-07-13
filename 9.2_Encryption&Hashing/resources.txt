@@ -1,5 +1,5 @@
 Story of Weak Ciper - Scotland vs Eisabeth
-cesar encryptioon - encryptii
-aes256 - Ases encryptioo
+cesar encryptioon - cryptii
+aes256 - Ases encryption
 Hashing
 eg- 377/1
