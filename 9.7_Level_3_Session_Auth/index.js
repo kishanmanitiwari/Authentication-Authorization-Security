@@ -1,41 +1,22 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
+import { db } from "./config/pgClient.js";
 import bcrypt from "bcrypt";
-import session from 'express-session'
-import sessionConfig from "./sessionConfig.js";
+import session from 'express-session';
+import sessionConfig from './config/sessionConfig.js';
+import validateUser from "./middleware/validateUser.js";
+
 
 const app = express();
 const port = 3000;
 
 //Pg-Client
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "basicAuth",
-  password: "kkmani2001",
-  port: 5432,
-});
-
 db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(session(sessionConfig));
 
-function validateUser(req, res, next) {
-  const userEmail = req.session.user;
-
-  if (userEmail) {
-    ///Iss user ne pehle login kar chuka hai aur iska user id hum pehle se apne session me store kar chuke hai- Iska matlab ye valid user hai
-    next();
-  } else {
-    //agar humare paas humare session me iss session id ke corresponding koi email nahi hai matlab ye user ne login nahi kiya hai iski login page pe bhejo
-    res.redirect('/login')
-  }
-
- 
-}
 
 app.get("/", (req, res) => {
   res.render("home.ejs");
