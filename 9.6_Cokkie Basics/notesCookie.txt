@@ -1,0 +1,19 @@
+1) Server bhool jata hai aap kaun ho
+2) Cookies and Session - Solution
+
+Cookies Explained
+
+Cookies are small pieces of data that a web server sends to a user's web browser when they visit a website. The browser stores this data on the user's computer, and it's included in subsequent requests to the same website. This allows the server to maintain some state information about the user between requests, even if the user closes and reopens their browser.
+
+Common Uses of Cookies
+
+Session Management: Cookies can be used to store a session ID, which helps the server identify a particular user's session and maintain data like shopping carts or login information.
+User Preferences: Websites can use cookies to remember user preferences, such as language settings, themes, or font sizes.
+Personalization: Cookies can be used to personalize the user experience by tracking their browsing history and interests.
+Analytics: Websites can use cookies to track user behavior for analytics purposes, such as understanding how users navigate the site and what content they interact with.
+
+
+
+   ** Stateful Vs Stateless** 
+   1) Cokkie kaise set karte hai
+   2) jwt kya hai aur jwt mein data kaise store kare
