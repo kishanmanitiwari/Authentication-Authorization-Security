@@ -17,6 +17,7 @@ export default function validateUser(req, res, next) {
     } else if (err.name === "JsonWebTokenError") {
       errorMessage = err.message;
     }
-    res.status(403).send(errorMessage);
+    console.log(errorMessage);
+    res.render("/login");
   }
 }
