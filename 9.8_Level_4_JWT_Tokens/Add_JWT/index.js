@@ -29,6 +29,18 @@ app.get("/", (req, res) => {
 });
 
 app.get("/login", (req, res) => {
+  const token = req.cookies.token;
+  if (token) {
+    try {
+      const data = jwt.verify(token, "secret");
+      console.log(data);
+      return res.redirect("/secrets")
+    } catch (error) {
+      console.log(error);
+    }
+    
+  }
+
   res.render("login.ejs");
 });
 
