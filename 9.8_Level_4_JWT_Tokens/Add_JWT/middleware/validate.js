@@ -18,6 +18,6 @@ export default function validateUser(req, res, next) {
       errorMessage = err.message;
     }
     console.log(errorMessage);
-    res.render("/login");
+    res.redirect("/login");
   }
 }

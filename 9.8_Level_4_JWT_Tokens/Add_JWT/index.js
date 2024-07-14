@@ -1,24 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-import pg from "pg";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import cookieParser from "cookie-parser";
+import db from "./db/dbConfig.js";
 import validateUser from "./middleware/validate.js";
 
 const app = express();
 const port = 3000;
-
-// Pg-Client
-const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
-  database: "basicAuth",
-  password: "kkmani2001",
-  port: 5432,
-});
-
-db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
