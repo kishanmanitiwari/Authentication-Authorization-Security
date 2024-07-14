@@ -1,0 +1,7 @@
+Let's create a simple example using Express.js to demonstrate how you can implement Role-Based Access Control (RBAC) using middleware for a basic web application scenario.
+
+Example Scenario:
+Suppose we have two roles in our application:
+
+Admin: Has full CRUD (Create, Read, Update, Delete) access to all resources.
+User: Has read and update access to their own resources.
