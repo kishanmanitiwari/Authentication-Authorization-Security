@@ -12,5 +12,8 @@ export default {
   secret: "your_secret_key",
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }, // Set secure to true if using HTTPS
+  cookie: {
+    secure: false,// Set secure to true if using HTTPS
+    maxAge: 1000 * 60 * 60 * 24, // Expire (milisec) in a day
+  }, 
 };
